@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you cite this computational research thesis, please use the metadata below. No DOI is minted here; do not invent one."
+type: thesis
+title: "Host-Infection × Residual-Burden Coupling as a Delayed-Risk Constraint Graph"
+authors:
+  - family-names: Ogbonna
+    given-names: Kelechi Emeka
+    email: kelechiogbonna300@gmail.com
+    alias: cloudynirvana
+abstract: >-
+  Can infection, marrow-suppression-like host stress, and residual-burden
+  relapse risk be represented as a qualitative delayed-risk graph with
+  explicit non-parameters, such that host-context constraints change
+  hypothesis rank without becoming PK/PD coefficients or care pathways?
+  Four simple temporal networks are ranked on declared windows. With
+  burden evidence only, the order is H0, H1, H3, H2. With infection and
+  marrow-stress-like windows attached outside Theta, the order is H2, H1,
+  H0, H3. A volume-only sort still leaves H0 first. A map from evidence
+  midpoints onto k_inf, k_host, CL and ke is refused, and the SHA-256
+  digest of Theta is unchanged. Seed 20260921. Not a medical device.
+keywords:
+  - delayed-risk graph
+  - temporal constraint network
+  - waiting time
+  - competing risks
+  - non-parameters
+  - hypothesis rank
+  - residual burden
+  - host infection
+  - computational oncology
+  - research-only
+license: MIT
+date-released: "2026-09-21"
+url: "https://github.com/cloudynirvana/thesis-14-infection-residual-burden-delay-graph"
+repository-code: "https://github.com/cloudynirvana/thesis-14-infection-residual-burden-delay-graph"
+preferred-citation:
+  type: thesis
+  title: "Host-Infection × Residual-Burden Coupling as a Delayed-Risk Constraint Graph"
+  authors:
+    - family-names: Ogbonna
+      given-names: Kelechi Emeka
+      year: 2026
+      month: 9
+  url: "https://github.com/cloudynirvana/thesis-14-infection-residual-burden-delay-graph"
+  notes: "Thesis #14 (NP-08). Computational research. Declared windows, not a cohort. No document DOI."

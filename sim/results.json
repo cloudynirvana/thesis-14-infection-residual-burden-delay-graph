@@ -1,0 +1,879 @@
+{
+  "seed": 20260921,
+  "theta": {
+    "CL": 1.2,
+    "V": 8.0,
+    "ke": 0.15
+  },
+  "theta_digest": "2233ffdf1e0ab6c1bb4939f3cdedd311423849e9c92fca0089626f9e3d5715b6",
+  "hypotheses": {
+    "H0": {
+      "name": "burden_chain",
+      "nodes": [
+        "S",
+        "B",
+        "R"
+      ],
+      "edges": [
+        [
+          "S",
+          "B",
+          3.0,
+          12.0
+        ],
+        [
+          "B",
+          "R",
+          4.0,
+          20.0
+        ]
+      ]
+    },
+    "H1": {
+      "name": "infection_serial",
+      "nodes": [
+        "S",
+        "I",
+        "B",
+        "R"
+      ],
+      "edges": [
+        [
+          "S",
+          "I",
+          1.0,
+          4.0
+        ],
+        [
+          "I",
+          "B",
+          3.0,
+          8.0
+        ],
+        [
+          "B",
+          "R",
+          4.0,
+          20.0
+        ]
+      ]
+    },
+    "H2": {
+      "name": "competing_host_delays",
+      "nodes": [
+        "S",
+        "I",
+        "M",
+        "B",
+        "R"
+      ],
+      "edges": [
+        [
+          "S",
+          "I",
+          1.0,
+          4.0
+        ],
+        [
+          "I",
+          "B",
+          3.0,
+          8.0
+        ],
+        [
+          "B",
+          "M",
+          2.0,
+          8.0
+        ],
+        [
+          "M",
+          "R",
+          2.0,
+          10.0
+        ],
+        [
+          "B",
+          "R",
+          4.0,
+          20.0
+        ]
+      ]
+    },
+    "H3": {
+      "name": "conjunction_before_burden",
+      "nodes": [
+        "S",
+        "I",
+        "M",
+        "B",
+        "R"
+      ],
+      "edges": [
+        [
+          "S",
+          "I",
+          1.0,
+          4.0
+        ],
+        [
+          "S",
+          "M",
+          1.0,
+          6.0
+        ],
+        [
+          "I",
+          "B",
+          2.0,
+          8.0
+        ],
+        [
+          "M",
+          "B",
+          2.0,
+          8.0
+        ],
+        [
+          "B",
+          "R",
+          4.0,
+          20.0
+        ]
+      ]
+    }
+  },
+  "schedules": {
+    "burden": [
+      {
+        "id": "E_B",
+        "node": "B",
+        "lo": 6.0,
+        "hi": 7.0
+      },
+      {
+        "id": "E_R",
+        "node": "R",
+        "lo": 16.0,
+        "hi": 18.0
+      }
+    ],
+    "host": [
+      {
+        "id": "E_I",
+        "node": "I",
+        "lo": 1.5,
+        "hi": 2.5
+      },
+      {
+        "id": "E_M",
+        "node": "M",
+        "lo": 10.0,
+        "hi": 12.0
+      },
+      {
+        "id": "E_B",
+        "node": "B",
+        "lo": 6.0,
+        "hi": 7.0
+      },
+      {
+        "id": "E_R",
+        "node": "R",
+        "lo": 16.0,
+        "hi": 18.0
+      }
+    ]
+  },
+  "rank_key": [
+    "infeasible last",
+    "fewer unexplained evidence objects",
+    "smaller feasible-window volume",
+    "fewer nodes",
+    "hypothesis id"
+  ],
+  "burden": {
+    "schedule": "burden",
+    "order": [
+      "H0",
+      "H1",
+      "H3",
+      "H2"
+    ],
+    "volume_only_order": [
+      "H0",
+      "H1",
+      "H3",
+      "H2"
+    ],
+    "rows": [
+      {
+        "id": "H0",
+        "name": "burden_chain",
+        "schedule": "burden",
+        "consistent": true,
+        "unexplained": [],
+        "n_unexplained": 0,
+        "attached": [
+          "E_B",
+          "E_R"
+        ],
+        "n_nodes": 3,
+        "volume": 2.0,
+        "windows": {
+          "S": [
+            0.0,
+            0.0
+          ],
+          "B": [
+            6.0,
+            7.0
+          ],
+          "R": [
+            16.0,
+            18.0
+          ]
+        },
+        "delays": {
+          "S->B": [
+            6.0,
+            7.0,
+            3.0,
+            12.0
+          ],
+          "B->R": [
+            9.0,
+            12.0,
+            4.0,
+            20.0
+          ],
+          "O->B": [
+            6.0,
+            7.0,
+            6.0,
+            7.0
+          ],
+          "O->R": [
+            16.0,
+            18.0,
+            16.0,
+            18.0
+          ]
+        },
+        "rank": 1
+      },
+      {
+        "id": "H1",
+        "name": "infection_serial",
+        "schedule": "burden",
+        "consistent": true,
+        "unexplained": [],
+        "n_unexplained": 0,
+        "attached": [
+          "E_B",
+          "E_R"
+        ],
+        "n_nodes": 4,
+        "volume": 6.0,
+        "windows": {
+          "S": [
+            0.0,
+            0.0
+          ],
+          "I": [
+            1.0,
+            4.0
+          ],
+          "B": [
+            6.0,
+            7.0
+          ],
+          "R": [
+            16.0,
+            18.0
+          ]
+        },
+        "delays": {
+          "S->I": [
+            1.0,
+            4.0,
+            1.0,
+            4.0
+          ],
+          "I->B": [
+            3.0,
+            6.0,
+            3.0,
+            8.0
+          ],
+          "B->R": [
+            9.0,
+            12.0,
+            4.0,
+            20.0
+          ],
+          "O->B": [
+            6.0,
+            7.0,
+            6.0,
+            7.0
+          ],
+          "O->R": [
+            16.0,
+            18.0,
+            16.0,
+            18.0
+          ]
+        },
+        "rank": 2
+      },
+      {
+        "id": "H3",
+        "name": "conjunction_before_burden",
+        "schedule": "burden",
+        "consistent": true,
+        "unexplained": [],
+        "n_unexplained": 0,
+        "attached": [
+          "E_B",
+          "E_R"
+        ],
+        "n_nodes": 5,
+        "volume": 24.0,
+        "windows": {
+          "S": [
+            0.0,
+            0.0
+          ],
+          "I": [
+            1.0,
+            4.0
+          ],
+          "M": [
+            1.0,
+            5.0
+          ],
+          "B": [
+            6.0,
+            7.0
+          ],
+          "R": [
+            16.0,
+            18.0
+          ]
+        },
+        "delays": {
+          "S->I": [
+            1.0,
+            4.0,
+            1.0,
+            4.0
+          ],
+          "S->M": [
+            1.0,
+            5.0,
+            1.0,
+            6.0
+          ],
+          "I->B": [
+            2.0,
+            6.0,
+            2.0,
+            8.0
+          ],
+          "M->B": [
+            2.0,
+            6.0,
+            2.0,
+            8.0
+          ],
+          "B->R": [
+            9.0,
+            12.0,
+            4.0,
+            20.0
+          ],
+          "O->B": [
+            6.0,
+            7.0,
+            6.0,
+            7.0
+          ],
+          "O->R": [
+            16.0,
+            18.0,
+            16.0,
+            18.0
+          ]
+        },
+        "rank": 3
+      },
+      {
+        "id": "H2",
+        "name": "competing_host_delays",
+        "schedule": "burden",
+        "consistent": true,
+        "unexplained": [],
+        "n_unexplained": 0,
+        "attached": [
+          "E_B",
+          "E_R"
+        ],
+        "n_nodes": 5,
+        "volume": 42.0,
+        "windows": {
+          "S": [
+            0.0,
+            0.0
+          ],
+          "I": [
+            1.0,
+            4.0
+          ],
+          "M": [
+            8.0,
+            15.0
+          ],
+          "B": [
+            6.0,
+            7.0
+          ],
+          "R": [
+            16.0,
+            18.0
+          ]
+        },
+        "delays": {
+          "S->I": [
+            1.0,
+            4.0,
+            1.0,
+            4.0
+          ],
+          "I->B": [
+            3.0,
+            6.0,
+            3.0,
+            8.0
+          ],
+          "B->M": [
+            2.0,
+            8.0,
+            2.0,
+            8.0
+          ],
+          "M->R": [
+            2.0,
+            10.0,
+            2.0,
+            10.0
+          ],
+          "B->R": [
+            9.0,
+            12.0,
+            4.0,
+            20.0
+          ],
+          "O->B": [
+            6.0,
+            7.0,
+            6.0,
+            7.0
+          ],
+          "O->R": [
+            16.0,
+            18.0,
+            16.0,
+            18.0
+          ]
+        },
+        "rank": 4
+      }
+    ]
+  },
+  "host": {
+    "schedule": "host",
+    "order": [
+      "H2",
+      "H1",
+      "H0",
+      "H3"
+    ],
+    "volume_only_order": [
+      "H0",
+      "H1",
+      "H2",
+      "H3"
+    ],
+    "rows": [
+      {
+        "id": "H2",
+        "name": "competing_host_delays",
+        "schedule": "host",
+        "consistent": true,
+        "unexplained": [],
+        "n_unexplained": 0,
+        "attached": [
+          "E_I",
+          "E_M",
+          "E_B",
+          "E_R"
+        ],
+        "n_nodes": 5,
+        "volume": 4.0,
+        "windows": {
+          "S": [
+            0.0,
+            0.0
+          ],
+          "I": [
+            1.5,
+            2.5
+          ],
+          "M": [
+            10.0,
+            12.0
+          ],
+          "B": [
+            6.0,
+            7.0
+          ],
+          "R": [
+            16.0,
+            18.0
+          ]
+        },
+        "delays": {
+          "S->I": [
+            1.5,
+            2.5,
+            1.0,
+            4.0
+          ],
+          "I->B": [
+            3.5,
+            5.5,
+            3.0,
+            8.0
+          ],
+          "B->M": [
+            3.0,
+            6.0,
+            2.0,
+            8.0
+          ],
+          "M->R": [
+            4.0,
+            8.0,
+            2.0,
+            10.0
+          ],
+          "B->R": [
+            9.0,
+            12.0,
+            4.0,
+            20.0
+          ],
+          "O->I": [
+            1.5,
+            2.5,
+            1.5,
+            2.5
+          ],
+          "O->M": [
+            10.0,
+            12.0,
+            10.0,
+            12.0
+          ],
+          "O->B": [
+            6.0,
+            7.0,
+            6.0,
+            7.0
+          ],
+          "O->R": [
+            16.0,
+            18.0,
+            16.0,
+            18.0
+          ]
+        },
+        "rank": 1
+      },
+      {
+        "id": "H1",
+        "name": "infection_serial",
+        "schedule": "host",
+        "consistent": true,
+        "unexplained": [
+          "E_M"
+        ],
+        "n_unexplained": 1,
+        "attached": [
+          "E_I",
+          "E_B",
+          "E_R"
+        ],
+        "n_nodes": 4,
+        "volume": 2.0,
+        "windows": {
+          "S": [
+            0.0,
+            0.0
+          ],
+          "I": [
+            1.5,
+            2.5
+          ],
+          "B": [
+            6.0,
+            7.0
+          ],
+          "R": [
+            16.0,
+            18.0
+          ]
+        },
+        "delays": {
+          "S->I": [
+            1.5,
+            2.5,
+            1.0,
+            4.0
+          ],
+          "I->B": [
+            3.5,
+            5.5,
+            3.0,
+            8.0
+          ],
+          "B->R": [
+            9.0,
+            12.0,
+            4.0,
+            20.0
+          ],
+          "O->I": [
+            1.5,
+            2.5,
+            1.5,
+            2.5
+          ],
+          "O->B": [
+            6.0,
+            7.0,
+            6.0,
+            7.0
+          ],
+          "O->R": [
+            16.0,
+            18.0,
+            16.0,
+            18.0
+          ]
+        },
+        "rank": 2
+      },
+      {
+        "id": "H0",
+        "name": "burden_chain",
+        "schedule": "host",
+        "consistent": true,
+        "unexplained": [
+          "E_I",
+          "E_M"
+        ],
+        "n_unexplained": 2,
+        "attached": [
+          "E_B",
+          "E_R"
+        ],
+        "n_nodes": 3,
+        "volume": 2.0,
+        "windows": {
+          "S": [
+            0.0,
+            0.0
+          ],
+          "B": [
+            6.0,
+            7.0
+          ],
+          "R": [
+            16.0,
+            18.0
+          ]
+        },
+        "delays": {
+          "S->B": [
+            6.0,
+            7.0,
+            3.0,
+            12.0
+          ],
+          "B->R": [
+            9.0,
+            12.0,
+            4.0,
+            20.0
+          ],
+          "O->B": [
+            6.0,
+            7.0,
+            6.0,
+            7.0
+          ],
+          "O->R": [
+            16.0,
+            18.0,
+            16.0,
+            18.0
+          ]
+        },
+        "rank": 3
+      },
+      {
+        "id": "H3",
+        "name": "conjunction_before_burden",
+        "schedule": "host",
+        "consistent": false,
+        "unexplained": [],
+        "n_unexplained": 0,
+        "attached": [
+          "E_I",
+          "E_M",
+          "E_B",
+          "E_R"
+        ],
+        "n_nodes": 5,
+        "volume": null,
+        "windows": {},
+        "delays": {},
+        "rank": 4
+      }
+    ]
+  },
+  "refusal": {
+    "status": "REFUSED",
+    "code": "ILLEGAL_PROMOTION",
+    "reasons": [
+      "source store is evidence, which is a non-parameter",
+      "new keys are PK-like coefficients: k_host, k_inf",
+      "existing Theta keys would be overwritten from evidence: CL, ke"
+    ],
+    "proposal_not_a_result": {
+      "source_store": "evidence",
+      "source_ids": [
+        "E_I",
+        "E_M",
+        "E_B",
+        "E_R"
+      ],
+      "attempted_write": {
+        "k_inf": 0.5,
+        "k_host": 0.2222222222222222,
+        "CL": 1.7777777777777777,
+        "ke": 0.06601401719618527
+      },
+      "midpoints": {
+        "t_I": 2.0,
+        "t_M": 11.0,
+        "t_B": 6.5,
+        "t_R": 17.0
+      }
+    },
+    "theta_before": {
+      "CL": 1.2,
+      "V": 8.0,
+      "ke": 0.15
+    },
+    "theta_after": {
+      "CL": 1.2,
+      "V": 8.0,
+      "ke": 0.15
+    },
+    "digest_before": "2233ffdf1e0ab6c1bb4939f3cdedd311423849e9c92fca0089626f9e3d5715b6",
+    "digest_after": "2233ffdf1e0ab6c1bb4939f3cdedd311423849e9c92fca0089626f9e3d5715b6",
+    "ranker_called": false
+  },
+  "samples": {
+    "burden_H0": {
+      "accepted": 200,
+      "tried": 200,
+      "head": [
+        {
+          "S": 0.0,
+          "B": 6.779009,
+          "R": 16.507909
+        },
+        {
+          "S": 0.0,
+          "B": 6.48301,
+          "R": 16.626782
+        },
+        {
+          "S": 0.0,
+          "B": 6.571639,
+          "R": 17.978191
+        },
+        {
+          "S": 0.0,
+          "B": 6.925049,
+          "R": 16.911091
+        },
+        {
+          "S": 0.0,
+          "B": 6.52854,
+          "R": 16.414634
+        }
+      ]
+    },
+    "host_H2": {
+      "accepted": 200,
+      "tried": 200,
+      "head": [
+        {
+          "S": 0.0,
+          "I": 1.822762,
+          "M": 10.357612,
+          "B": 6.312536,
+          "R": 16.215388
+        },
+        {
+          "S": 0.0,
+          "I": 2.314261,
+          "M": 10.272577,
+          "B": 6.937895,
+          "R": 17.141758
+        },
+        {
+          "S": 0.0,
+          "I": 2.193843,
+          "M": 10.32993,
+          "B": 6.225273,
+          "R": 16.15323
+        },
+        {
+          "S": 0.0,
+          "I": 1.7494,
+          "M": 10.330996,
+          "B": 6.511482,
+          "R": 17.190274
+        },
+        {
+          "S": 0.0,
+          "I": 2.056471,
+          "M": 11.479609,
+          "B": 6.83719,
+          "R": 17.298757
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Evidence windows are declared. They are not a cohort.",
+    "Structural delay bounds are hypothesis syntax, not Theta.",
+    "The refused coefficients are not estimates."
+  ]
+}
